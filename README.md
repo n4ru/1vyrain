@@ -18,6 +18,8 @@ This repo contains the main script and pre-compiled binary files used in the 1vy
 
 The main link to the ready to go live USB image can be found [here](https://n4ru.it/1vyrain/).
 
+If you need to downgrade your ThinkPad to a compatible BIOS version, check out [IVprep](https://github.com/n4ru/IVprep).
+
 Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
 
 # Features:
