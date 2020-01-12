@@ -18,6 +18,8 @@ This repo contains the main script and pre-compiled binary files used in the 1vy
 
 The main link to the ready to go live USB image can be found [here](https://n4ru.it/1vyrain/).
 
+Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
+
 # Features:
 - Automatic exploit chain unlocking bios region for flashing
 - Model detection and automatic bios flashing
