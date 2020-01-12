@@ -18,8 +18,6 @@ This repo contains the main script and pre-compiled binary files used in the 1vy
 
 The main link to the ready to go live USB image can be found **[here](https://n4ru.it/1vyrain/)**. *Requires a 4GB+ USB flash drive.*
 
-If you need to downgrade your ThinkPad to a compatible BIOS version, check out [IVprep](https://github.com/n4ru/IVprep).
-
 Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
 
 # Features:
@@ -32,6 +30,21 @@ Updates will be published here in the form of scripts that can be downloaded and
 - Whitelist removal to use any WLAN adapter
 - Advanced menu (custom fan curve, TDP, core disable, etc)
 - Intel ME disablement via advanced menu
+
+# Install
+
+0. Ensure you're on a compatible BIOS version. Run [IVprep](https://github.com/n4ru/IVprep) if you are not.
+1. Burn the 1vyrain image onto a flash drive.
+2. Boot in UEFI mode from the flash drive.
+3. Follow the on-screen instructions.
+4. That's it!
+
+# Custom BIOS Images
+By default, 1vyrain includes the latest BIOS versions for all models, but you can flash a custom image such as heads, skulls, or a coreboot build. Make sure you have wired ethernet attached on boot, and that your image is *EXACTLY* 4MB and uploaded somewhere that you can grab with a simple `wget` command. When asked what to flash, select "Flash a custom BIOS from URL" (option 2). Input the URL. That's it!
+
+Don't worry, if your download screws up or the filesize was wrong, the flashing will simply fail. You won't brick.
+
+---
 
 This was a monumental amount of work to put together and release, and took a lot of time. 
 
