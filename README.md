@@ -16,7 +16,7 @@ Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmo
 
 This repo contains the main script and pre-compiled binary files used in the 1vyrain image to flash machines.
 
-The main link to the ready to go live USB image can be found [here](https://n4ru.it/1vyrain/).
+The main link to the ready to go live USB image can be found [here](https://n4ru.it/1vyrain/). Requires a 4GB+ USB flash drive.
 
 If you need to downgrade your ThinkPad to a compatible BIOS version, check out [IVprep](https://github.com/n4ru/IVprep).
 
