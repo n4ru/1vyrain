@@ -33,6 +33,10 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 This was a monumental amount of work to put together and release, and took a lot of time. 
 
+Special thanks goes to the r/ThinkPad discord for their efforts testing, especially \x!
+
+Somehow we had ZERO bricks throughout the entire process! No hardware programmers were needed for recovery!
+
 Please consider donating or passing my resume along.
 
 Tip me: 
