@@ -20,6 +20,8 @@ The main link to the ready to go live USB image can be found **[here](https://n4
 
 Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
 
+**Although 1vyrain has been very thoroughly tested and there were zero bricks during testing, there are some random quirks associated with bypassing normal flashing methods and things can always go awry randomly. There is no warranty or support guaranteed so please keep this in mind if you intend to use this software. I am not responsible for broken devices. Fortunately, it is impossible to permanently brick a device with this method. Worst case scenario, you can flash a backup or fresh BIOS using a hardware programmer.**
+
 # Features:
 - Automatic exploit chain unlocking bios region for flashing
 - Model detection and automatic bios flashing
@@ -31,9 +33,11 @@ Updates will be published here in the form of scripts that can be downloaded and
 - Advanced menu (custom fan curve, TDP, core disable, etc)
 - Intel ME disablement via advanced menu
 
-# Install
+# Before Installing
+**Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatability [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom image, make sure you plug in ethernet prior to boot and that your image is directly accessible via URL.
 
-0. Ensure you're on a compatible BIOS version. Run [IVprep](https://github.com/n4ru/IVprep) if you are not.
+# Installing
+
 1. Burn the 1vyrain image onto a flash drive.
 2. Boot in UEFI mode from the flash drive.
 3. Follow the on-screen instructions.
