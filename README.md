@@ -43,7 +43,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 3. Follow the on-screen instructions.
 4. That's it! 
 
-Don't be alarmed if your ThinkPad/ThinkLight power cycles a few times after a flash. That is *normal*!
+Don't be alarmed if your ThinkPad/ThinkLight power cycles a few times after a flash, or you get a CRC Security error. That is *normal* and will go away after another restart!
 
 **NOTE:** This will NOT modify your EC. You are safe to flash your EC with the battery or keyboard mod at any time as long as you are on a version compatible with the EC mod (check compatibility [here](https://github.com/hamishcoleman/thinkpad-ec#compatibilty-warning)). Both IVprep and 1vyrain will only modify the BIOS region! You can safely use this image to update to the latest modded BIOS without losing your EC mod!
 
