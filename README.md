@@ -54,13 +54,17 @@ Don't worry, if your download screws up or the filesize was wrong, the flashing 
 
 ---
 
+# Credits
+
 This was a monumental amount of work to put together and release, and took a lot of time. 
 
 Special thanks goes to the r/ThinkPad discord for their efforts testing, especially \x!
 
+Huge thanks go out to [gch1p](https://github.com/n4ru/1vyrain/issues/created_by/gch1p) for discovering the method used for entirely unlocking the BIOS region, without him this would have not been possible.
+
 Somehow we had ZERO bricks throughout the entire process! No hardware programmers were needed for recovery!
 
-Please consider donating or passing my resume along.
+Please consider donating or passing my resume along if this helped you.
 
 Tip me: 
 - BTC 3H8kRYoiwS5hNjZddTr5NLYJ77ZwHBpyKp
