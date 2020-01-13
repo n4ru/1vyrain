@@ -69,7 +69,7 @@ This was a monumental amount of work to put together and release, and took a lot
 
 Special thanks goes to the r/ThinkPad discord for their efforts testing, especially \x!
 
-Huge thanks go out to [gch1p](https://github.com/n4ru/1vyrain/issues/created_by/gch1p) for discovering the method used for entirely unlocking the BIOS region, without him this would have not been possible.
+Huge thanks go out to [gch1p](https://github.com/gch1p/thinkpad-bios-software-flashing-guide) for discovering the method used for entirely unlocking the BIOS region, without him this would have not been possible.
 
 Somehow we had ZERO bricks throughout the entire process! No hardware programmers were needed for recovery!
 
