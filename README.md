@@ -36,6 +36,15 @@ Updates will be published here in the form of scripts that can be downloaded and
 # Before Installing
 **Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatability [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom image, make sure you plug in ethernet prior to boot and that your image is directly accessible via URL.
 
+# Supported Systems
+- X230
+- T430s
+- T430
+- T530
+- W530
+
+**X330 and X230t Owners:** Sit tight, we've got support coming for you in the next update.
+
 # Installing
 
 1. Burn the 1vyrain image onto a flash drive.
