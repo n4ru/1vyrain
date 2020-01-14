@@ -13,6 +13,17 @@ echo "                      888                               "
 echo "                 Y8b d88P                               "
 echo "                  \`Y88P\`                              "
 echo "Software-based jailbreak for IvyBridge (xx30) series ThinkPads"
+echo "Revision 1"
+
+# update script if networked
+if [ $updated != "true" ] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
+    echo "\e[1;31mNetworking detected. Checking for 1vyrain Updates...\e[0m"
+    rm /home/ivy/start.sh
+    wget -q https://raw.githubusercontent.com/n4ru/1vyrain/master/start.sh -O /home/ivy/start.sh
+    export updated="true"
+    bash /home/ivy/start.sh
+    exit 1
+fi
 
 # verify EFI vars
 if [ ! -d "/sys/firmware/efivars" ] && [ ! -d "/sys/firmware/efi" ]; then
@@ -22,12 +33,14 @@ fi
 
 # Get BIOS version
 bios=$(dmidecode -t bios | grep -i version | awk {'print $2'})
-machine=$(dmidecode -t system | grep -i "Family" | awk {'print $3'})
+machine=$(dmidecode -t system | grep -i "Family" | awk {'print $3$4'})
 version=$(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g' | sed 's/\.//g')
 valid="false"
 
 # Check if BIOS version is valid
 case $machine in  
+    X230Tablet|X230t)
+        if [ "259" -gt "$version" ]; then machine="X230t" && valid="true"; fi ;;
     X230|T530)
         if [ "261" -gt "$version" ]; then valid="true"; fi ;;
     T430)
@@ -71,6 +84,7 @@ echo -e "\e[1;32mPlease enter a choice:\e[0m"
 echo "1) Flash Modified Lenovo BIOS" 
 echo "2) Flash a custom BIOS from URL" 
 echo "3) Shutdown / Abort Procedure"
+echo "4) Flash a backup BIOS if it exists"
 read choice
 case $choice in
     "2")
@@ -83,18 +97,31 @@ case $choice in
             machine="custom"
         fi
         ;;
+    "4") 
+        mv /home/ivy/bios/backup.rom /home/ivy/bios/backuptemp.rom
+        machine="backuptemp"
+        ;;
     "3") shutdown NOW ;;
     *) ;;
 esac
 
 read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the ThinkPad shut off during this process, you will need a hardware programmer to fix it!"
 
+# backup BIOS first each time
+echo -e "\e[1;32mBacking up existing BIOS...\e[0m"
+rm /home/ivy/bios/backup.rom &> /dev/null
+/home/ivy/flashrom/flashrom -p internal -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
+dd if=/home/ivy/bios/backup_12.rom of=/home/ivy/bios/backup.rom bs=1M skip=8
+rm /home/ivy/bios/backup_12.rom &> /dev/null
+
 echo -e "\e[1;32mFlashing BIOS...\e[0m"
 
 # pad the BIOS to 12MB before flashing
 dd if=/dev/zero of=/home/ivy/bios/8MB bs=1M count=8
 cat /home/ivy/bios/8MB /home/ivy/bios/$machine.rom > /home/ivy/bios/$machine.temp
-rm /home/ivy/bios/custom.rom
+# delete custom and temporary backup
+rm /home/ivy/bios/custom.rom &> /dev/null
+rm /home/ivy/bios/backuptemp.rom &> /dev/null
 
 /home/ivy/flashrom/flashrom -p internal -w /home/ivy/bios/$machine.temp --ifd -i bios -N
 
