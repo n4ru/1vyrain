@@ -16,7 +16,7 @@ echo "Software-based jailbreak for IvyBridge (xx30) series ThinkPads"
 echo "Revision 1"
 
 # update script if networked
-if [ $updated != "true" ] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
+if [[ $updated != "true" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
     echo "\e[1;31mNetworking detected. Checking for 1vyrain Updates...\e[0m"
     rm /home/ivy/start.sh
     wget -q https://raw.githubusercontent.com/n4ru/1vyrain/master/start.sh -O /home/ivy/start.sh
