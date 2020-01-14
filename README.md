@@ -38,12 +38,13 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 # Supported Systems
 - X230
+- X230t
 - T430s
 - T430
 - T530
 - W530
 
-**X330 and X230t Owners:** Sit tight, we've got support coming for you in the next update. *Do NOT run this on X230t systems at the moment, you may brick!*
+**X330 Owners:** Sit tight, we've got support coming for you in the next update.
 
 # Installing
 
