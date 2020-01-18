@@ -11,6 +11,8 @@ d8888                                      Y8P
                  Y8b d88P                               
                   "Y88P"                                
 </pre>
+
+# JOIN THE THINKPAD DISCORD @ http://discord.gg/Ybdz7AS
                   
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
