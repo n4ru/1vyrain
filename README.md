@@ -64,6 +64,10 @@ By default, the image includes the latest BIOS versions for all models, but you 
 
 Don't worry, if your download screws up or the filesize was wrong, the flashing will simply fail. You won't brick.
 
+# License
+
+I retain all rights to the code found in this repo, and no one may reproduce, distribute, or create derivative works from this repo without including this README.me in its entirety!
+
 ---
 
 # Credits
