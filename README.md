@@ -50,7 +50,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 # Bugs
 The following issues persist in Rev1 of 1vyrain but should be fixed in the upcoming release (Rev2)
-- X230T WLAN Whitelist
+- WLAN patch doesn't appear to function on X230t, but is fixed and just needs to be updated in 1vyrain.
 - T430s exploit fails to unlock the BIOS on some systems.
 
 # Installing
