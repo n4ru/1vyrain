@@ -49,7 +49,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 **X330 Owners:** Sit tight, we've got support coming for you in the next update.
 
 # Bugs
-The following issues persist in Rev1 of 1vyrain but should be fixed in the upcoming releae (Rev2)
+The following issues persist in Rev1 of 1vyrain but should be fixed in the upcoming release (Rev2)
 - X230T WLAN Whitelist
 - T430s exploit fails to unlock the BIOS on some systems.
 
