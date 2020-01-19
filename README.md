@@ -12,8 +12,6 @@ d8888                                      Y8P
                   "Y88P"                                
 </pre>
 
-# JOIN THE THINKPAD DISCORD r/ThinkPad MODS DON'T WANT YOU TO KNOW ABOUT! @ http://discord.gg/Ybdz7AS
-                  
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
 This repo contains the main script and pre-compiled binary files used in the 1vyrain image to flash machines.
@@ -74,6 +72,8 @@ Don't worry, if your download screws up or the filesize was wrong, the flashing 
 I retain all rights to the code found in this repo, and no one may reproduce, distribute, or create derivative works from this repo without including this README.me in its entirety!
 
 This project is not permitted to be shared on the r/ThinkPad subreddit.
+
+### Join the ThinkPad discord where research happens - https://discord.gg/Ybdz7AS 
 
 ---
 
