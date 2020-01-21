@@ -40,11 +40,10 @@ Updates will be published here in the form of scripts that can be downloaded and
 - X230
 - X230t
 - T430s
-- T430
 - T530
 - W530
 
-**X330 Owners:** Sit tight, we've got support coming for you in the next update.
+**Compatability Warning:** There are some xx30 systems that do not come with the standard 12MB BIOS chip layout, and may instead ship with a 16MB layout. Support for these is coming soon.
 
 # Bugs
 The following issues persist in Rev1 of 1vyrain but should be fixed in the upcoming release (Rev2)
