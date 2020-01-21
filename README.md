@@ -16,7 +16,7 @@ Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmo
 
 This repo contains the main script and pre-compiled binary files used in the 1vyrain image to flash machines.
 
-The main link to the ready to go live USB image can be found **[here](https://n4ru.it/1vyrain/)**. *Requires a 4GB+ USB flash drive.*
+The main link to the ready to go live USB image can be found **[here](https://1vyra.in/)**. *Requires a 4GB+ USB flash drive.*
 
 Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
 
