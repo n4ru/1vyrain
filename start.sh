@@ -114,7 +114,7 @@ read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the 
 # backup BIOS first each time
 echo -e "\e[1;32mBacking up existing BIOS...\e[0m"
 rm /home/ivy/bios/backup.rom &> /dev/null
-/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
+/home/ivy/flashrom/flashrom -p internal -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
 dd if=/home/ivy/bios/backup_12.rom of=/home/ivy/bios/backup.rom bs=1M skip=8
 rm /home/ivy/bios/backup_12.rom &> /dev/null
 
@@ -128,7 +128,7 @@ cat /home/ivy/bios/8MB /home/ivy/bios/$machine.rom > /home/ivy/bios/rom.temp
 rm /home/ivy/bios/custom.rom &> /dev/null
 rm /home/ivy/bios/backuptemp.rom &> /dev/null
 
-/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -w /home/ivy/bios/rom.temp --ifd -i bios -N
+/home/ivy/flashrom/flashrom -p internal -w /home/ivy/bios/rom.temp --ifd -i bios -N
 
 rm /home/ivy/bios/rom.temp
 
