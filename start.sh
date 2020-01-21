@@ -13,13 +13,18 @@ echo "                      888                               "
 echo "                 Y8b d88P                               "
 echo "                  \`Y88P\`                              "
 echo "Software-based jailbreak for IvyBridge (xx30) series ThinkPads"
-echo "Revision 1"
+echo "Revision 2"
+
+# Give the network time to come online
+echo -e "\e[1;32mWaiting for Network...\e[0m"
+sleep 5
 
 # update script if networked
-if [[ $updated != "true" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
+if [[ $updated != "r2" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
     rm /home/ivy/start.sh
     wget -q https://raw.githubusercontent.com/n4ru/1vyrain/master/start.sh -O /home/ivy/start.sh
-    export updated="true"
+    export updated="r2"
+    echo 'export updated=r2' >> /home/ivy/.bashrc 
     bash /home/ivy/start.sh
     exit 1
 fi
@@ -109,7 +114,7 @@ read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the 
 # backup BIOS first each time
 echo -e "\e[1;32mBacking up existing BIOS...\e[0m"
 rm /home/ivy/bios/backup.rom &> /dev/null
-/home/ivy/flashrom/flashrom -p internal -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
+/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
 dd if=/home/ivy/bios/backup_12.rom of=/home/ivy/bios/backup.rom bs=1M skip=8
 rm /home/ivy/bios/backup_12.rom &> /dev/null
 
@@ -117,15 +122,16 @@ echo -e "\e[1;32mFlashing BIOS...\e[0m"
 
 # pad the BIOS to 12MB before flashing
 dd if=/dev/zero of=/home/ivy/bios/8MB bs=1M count=8
-cat /home/ivy/bios/8MB /home/ivy/bios/$machine.rom > /home/ivy/bios/$machine.temp
+cat /home/ivy/bios/8MB /home/ivy/bios/$machine.rom > /home/ivy/bios/rom.temp
+
 # delete custom and temporary backup
 rm /home/ivy/bios/custom.rom &> /dev/null
 rm /home/ivy/bios/backuptemp.rom &> /dev/null
 
-/home/ivy/flashrom/flashrom -p internal -w /home/ivy/bios/$machine.temp --ifd -i bios -N
+/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -w /home/ivy/bios/rom.temp --ifd -i bios -N
 
-rm /home/ivy/bios/$machine.temp
+rm /home/ivy/bios/rom.temp
 
-read -p "All done! Press Enter key to restart your ThinkPad!"
+read -p "All done! Press Enter key to restart your ThinkPad or CTRL+C to exit to shell."
 
 reboot NOW
