@@ -69,7 +69,7 @@ Don't worry, if your download screws up or the filesize was wrong, the flashing 
 
 # License
 
-I retain all rights to the code found in this repo, and no one may reproduce, distribute, or create derivative works from this repo without including this README.me in its entirety!
+I retain all rights to the code found in this repo (excluding the BIOS roms and the patcher binary), and no one may reproduce, distribute, or create derivative works from this repo without including this README.me in its entirety!
 
 This project is not permitted to be shared on the ThinkPad subreddit.
 
