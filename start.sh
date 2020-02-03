@@ -114,21 +114,21 @@ read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the 
 # backup BIOS first each time
 echo -e "\e[1;32mBacking up existing BIOS...\e[0m"
 rm /home/ivy/bios/backup.rom &> /dev/null
-/home/ivy/flashrom/flashrom -p internal -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
-dd if=/home/ivy/bios/backup_12.rom of=/home/ivy/bios/backup.rom bs=1M skip=8
+/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
+dd if=/home/ivy/bios/backup_12.rom of=/home/ivy/bios/backup.rom bs=1M skip=$([[ $machine == "T430s" ]] && echo 12 || echo 8)
 rm /home/ivy/bios/backup_12.rom &> /dev/null
 
 echo -e "\e[1;32mFlashing BIOS...\e[0m"
 
-# pad the BIOS to 12MB before flashing
-dd if=/dev/zero of=/home/ivy/bios/8MB bs=1M count=8
-cat /home/ivy/bios/8MB /home/ivy/bios/$machine.rom > /home/ivy/bios/rom.temp
+# pad the BIOS to 12MB or 16MB before flashing
+dd if=/dev/zero of=/home/ivy/bios/pad bs=1M count=$([[ $machine == "T430s" ]] && echo 12 || echo 8)
+cat /home/ivy/bios/pad /home/ivy/bios/$machine.rom > /home/ivy/bios/rom.temp
 
 # delete custom and temporary backup
 rm /home/ivy/bios/custom.rom &> /dev/null
 rm /home/ivy/bios/backuptemp.rom &> /dev/null
 
-/home/ivy/flashrom/flashrom -p internal -w /home/ivy/bios/rom.temp --ifd -i bios -N
+/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -w /home/ivy/bios/rom.temp --ifd -i bios -N
 
 rm /home/ivy/bios/rom.temp
 
