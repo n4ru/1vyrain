@@ -1,0 +1,3 @@
+[submodule "patched-bios"]
+	path = patched-bios
+	url = https://github.com/n4ru/patched-bioses
