@@ -44,7 +44,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 - T530
 - W530
 
-**Compatability Warning:** There are some xx30 systems that do not come with the standard 12MB BIOS chip layout, and may instead ship with a 16MB or even 128MB layout. Support for these is coming soon.
+**Compatability Warning:** There are some xx30 systems that do not come with the standard 12MB BIOS chip layout, and may instead ship with a 16MB layout. Support for these is coming soon.
 
 # Bugs
 The following issues persist in Rev1 of 1vyrain but should be fixed in the upcoming release (Rev2)
