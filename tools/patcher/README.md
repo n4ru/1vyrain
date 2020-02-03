@@ -13,4 +13,4 @@ Patch Lenovo stock .FL1 BIOS update files to be [1vyrain](https://github.com/n4r
 
 ## Usage
 
-Drop in any `FL1` BIOS update file (you can find them in Lenovo update ISOs or Windows executables once extracted) and run `patch.sh`. The resulting `patched.rom` is safe to upload and flash with 1vyrain.
+Drop in any supported IvyBridge `FL1` BIOS update file (you can find them in Lenovo update ISOs or Windows executables once extracted) and run `patch.sh`. The resulting `patched.rom` is safe to upload and flash with 1vyrain.
