@@ -13,18 +13,18 @@ echo "                      888                               "
 echo "                 Y8b d88P                               "
 echo "                  \`Y88P\`                              "
 echo "Software-based jailbreak for IvyBridge (xx30) series ThinkPads"
-echo "Revision 2"
+echo "Revision 3"
 
 # Give the network time to come online
 echo -e "\e[1;32mWaiting for Network...\e[0m"
 sleep 2
 
 # update script if networked
-if [[ $updated != "r2" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
+if [[ $updated != "r3" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
     rm /home/ivy/start.sh
-    wget -q https://raw.githubusercontent.com/n4ru/1vyrain/master/start.sh -O /home/ivy/start.sh
-    export updated="r2"
-    echo 'export updated=r2' >> /home/ivy/.bashrc 
+    wget -q https://1vyra.in/start.sh -O /home/ivy/start.sh
+    export updated="r3"
+    echo 'export updated=r3' >> /home/ivy/.bashrc 
     bash /home/ivy/start.sh
     exit 1
 fi
