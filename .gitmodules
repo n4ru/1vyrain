@@ -1,3 +1,6 @@
 [submodule "patched-bios"]
 	path = patched-bios
 	url = https://github.com/n4ru/patched-bioses
+[submodule "tools/IVPrep"]
+	path = tools/IVPrep
+	url = https://github.com/n4ru/IVPrep
