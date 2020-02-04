@@ -70,7 +70,7 @@ I retain all rights to the code found in this repo (excluding the BIOS roms and 
 
 This project is not permitted to be shared on the ThinkPad subreddit.
 
-### Join the ThinkPad discord where research happens - https://discord.gg/Ybdz7AS 
+### Join the ThinkPad discord where research happens - https://discord.gg/xVFx9vM
 
 ---
 
