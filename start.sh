@@ -17,7 +17,7 @@ echo "Revision 2"
 
 # Give the network time to come online
 echo -e "\e[1;32mWaiting for Network...\e[0m"
-sleep 5
+sleep 2
 
 # update script if networked
 if [[ $updated != "r2" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
