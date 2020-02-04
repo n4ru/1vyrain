@@ -12,6 +12,8 @@ d8888                                      Y8P
                   "Y88P"                                
 </pre>
 
+Revision 3
+
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
 This repo contains the main script and pre-compiled binary files used in the 1vyrain image to flash machines.
