@@ -56,7 +56,7 @@ The following issues persist in Rev1 of 1vyrain but should be fixed in the upcom
 # Installing
 
 1. Burn the 1vyrain image onto a flash drive.
-2. Boot in UEFI mode from the flash drive.
+2. Boot in UEFI mode from the flash drive, with Secure Boot off.
 3. Follow the on-screen instructions.
 4. That's it! 
 
