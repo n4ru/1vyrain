@@ -13,17 +13,17 @@ echo "                      888                               "
 echo "                 Y8b d88P                               "
 echo "                  \`Y88P\`                              "
 echo "Software-based jailbreak for IvyBridge (xx30) series ThinkPads"
-echo "Revision 3"
+echo "Revision 4"
 
 # Give the network time to come online
 if ! ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then echo -e "\e[1;32mWaiting 10 seconds for Network...\e[0m" && sleep 10; fi
 
 # update script if networked
-if [[ $updated != "r3" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+if [[ $updated != "r4" ]] && ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
     rm /home/ivy/start.sh
     wget -q https://1vyra.in/start.sh --no-check-certificate -O /home/ivy/start.sh
-    export updated="r3"
-    echo 'export updated=r3' >> /home/ivy/.bashrc
+    export updated="r4"
+    echo 'export updated=r4' >> /home/ivy/.bashrc
     bash /home/ivy/start.sh
     exit 1
 fi
@@ -55,13 +55,13 @@ case $machine in
 esac
 
 if [ $valid == "false" ]; then
-    echo -e "\e[1;31mNo Valid BIOS detected. Please downgrade to a supported BIOS. Exiting.\e[0m"
-    exit 1
+    echo -e "\e[1;31mNo Valid BIOS detected, but you can still attempt the S3 exploit to see if your machine may be compatible in the future.\e[0m"
+    echo -e "\e[1;31You will not be able to flash a custom BIOS, but this data can help make your device compatible in the future.\e[0m"
 else
     echo -e "\e[1;32mDetected Compatible Configuration - $machine $bios ($(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g')).\e[0m"
 fi
 
-read -p "Press Enter key to start the jailbreak. Your ThinkPad will suspend as part of the process. Press the power button to wake it up!"
+read -p "Press Enter key to attempt BIOS exploit. Your ThinkPad will suspend as part of the process. Press the power button to wake it up!"
 
 /home/ivy/chipsec/chipsec_main.py -m tools.uefi.s3script_modify -a replace_op,mmio_wr,0xFED1F804,0x6009,0x2
 
@@ -79,7 +79,12 @@ setpci -s 00:1f.0 dc.b=09
 
 # make sure BIOS is writable now
 if [ $(/home/ivy/chipsec/chipsec_main.py -m common.bios_wp | sed 's/\n//g' | grep -c 'None of the SPI protected ranges write-protect BIOS region') == 0 ]; then
-    echo -e "\e[1;31mBIOS still write-protected! Something went wrong. Exiting.\e[0m"
+    echo -e "\e[1;31mBIOS still write-protected! Something went wrong or your device is not compatible. Exiting.\e[0m"
+    exit 1
+else if [ $valid == "false" ]; then
+    echo -e "\e[1;32mBIOS no longer write-protected! Your machine is compatible but unsupported. Please report the following details as a GitHub issue:"
+    echo -e "Machine: $machine\nBIOS: $bios\nVersion: $(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g')\e[0m"
+    read -p "Press Enter to exit the script."
     exit 1
 fi
 
@@ -87,7 +92,6 @@ echo -e "\e[1;32mPlease enter a choice:\e[0m"
 echo "1) Flash Modified Lenovo BIOS" 
 echo "2) Flash a custom BIOS from URL" 
 echo "3) Shutdown / Abort Procedure"
-echo "4) Flash a backup BIOS if it exists"
 read choice
 case $choice in
     "2")
@@ -100,32 +104,17 @@ case $choice in
             machine="custom"
         fi
         ;;
-    "4") 
-        mv /home/ivy/bios/backup.rom /home/ivy/bios/backuptemp.rom
-        machine="backuptemp"
-        ;;
     "3") shutdown NOW ;;
     *) ;;
 esac
 
 read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the ThinkPad shut off during this process, you will need a hardware programmer to fix it!"
 
-# backup BIOS first each time
-echo -e "\e[1;32mBacking up existing BIOS...\e[0m"
-rm /home/ivy/bios/backup.rom &> /dev/null
-/home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -r /home/ivy/bios/backup_12.rom --ifd -i bios -N
-dd if=/home/ivy/bios/backup_12.rom of=/home/ivy/bios/backup.rom bs=1M skip=$([[ $machine == "T430s" ]] && echo 12 || echo 8)
-rm /home/ivy/bios/backup_12.rom &> /dev/null
-
 echo -e "\e[1;32mFlashing BIOS...\e[0m"
 
 # pad the BIOS to 12MB or 16MB before flashing
 dd if=/dev/zero of=/home/ivy/bios/pad bs=1M count=$([[ $machine == "T430s" ]] && echo 12 || echo 8)
 cat /home/ivy/bios/pad /home/ivy/bios/$machine.rom > /home/ivy/bios/rom.temp
-
-# delete custom and temporary backup
-rm /home/ivy/bios/custom.rom &> /dev/null
-rm /home/ivy/bios/backuptemp.rom &> /dev/null
 
 /home/ivy/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -w /home/ivy/bios/rom.temp --ifd -i bios -N
 
