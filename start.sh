@@ -73,7 +73,7 @@ setpci -s 00:1f.0 dc.b=09
 if [ $(/root/chipsec/chipsec_main.py -m common.bios_wp | sed 's/\n//g' | grep -c 'None of the SPI protected ranges write-protect BIOS region') == 0 ]; then
     echo -e "\e[1;31mBIOS still write-protected! Something went wrong or your device is not compatible. Exiting.\e[0m"
     exit 1
-else if [ $valid == "false" ]; then
+elif [ $valid == "false" ]; then
     echo -e "\e[1;32mBIOS no longer write-protected! Your machine is compatible but unsupported. Please report the following details as a GitHub issue:"
     echo -e "Machine: $machine\nBIOS: $bios\nVersion: $(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g')\nFlashsize: $flashsize M\e[0m"
     read -p "Press Enter to exit the script."
@@ -81,8 +81,8 @@ else if [ $valid == "false" ]; then
 fi
 
 echo -e "\e[1;32mPlease enter a choice:\e[0m"
-$([[ $machine == "X230" ]] && echo "0) Flash LVDS Modified Lenovo BIOS for X330" 
-$([[ $valid == "valid" ]] && echo "1) Flash Modified Lenovo BIOS" 
+$([[ $machine == "X230" ]]) && echo "0) Flash LVDS Modified Lenovo BIOS for X330"
+$([[ $valid == "true" ]]) && echo "1) Flash Modified Lenovo BIOS"
 echo "2) Flash a custom BIOS from URL" 
 echo "3) Shutdown / Abort Procedure"
 read choice
