@@ -24,7 +24,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 **Although 1vyrain has been very thoroughly tested and there were zero bricks during testing, there are some random quirks associated with bypassing normal flashing methods and things can always go awry randomly. There is no warranty or support guaranteed so please keep this in mind if you intend to use this software. I am not responsible for broken devices. Fortunately, it is impossible to permanently brick a device with this method. Worst case scenario, you can flash a backup or fresh BIOS using a hardware programmer.**
 
-## Read the [long form FAQ](https://medium.com/@n4ru/1vyrain-self-build-documentation-5059825b1fdb) before opening an issue.
+## Read the [long form FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before opening an issue.
 
 # Features:
 - Automatic exploit chain unlocking bios region for flashing
