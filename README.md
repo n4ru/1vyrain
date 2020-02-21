@@ -12,7 +12,7 @@ d8888                                      Y8P
                   "Y88P"                                
 </pre>
 
-### Revision 4
+### Revision 4 (MD5: `e414677f9bd93f0a7719b846cc763a00`)
 
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
