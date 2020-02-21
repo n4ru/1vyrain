@@ -12,13 +12,13 @@ d8888                                      Y8P
                   "Y88P"                                
 </pre>
 
-### Revision 3
+### Revision 4
 
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
 This repo contains the main script and pre-compiled binary files used in the 1vyrain image to flash machines.
 
-The main link to the ready to go live USB image can be found **[here](https://1vyra.in/)**. *Requires a 4GB+ USB flash drive.*
+The main link to the ready to go live USB image can be found **[here](https://1vyra.in/)**.
 
 Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
 
@@ -40,13 +40,17 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 # Supported Systems
 - X230
+- X330*
 - X230t
 - T430
 - T430s
 - T530
 - W530
 
-**Compatability Warning:** There are some xx30 systems that do not come with the standard 12MB BIOS chip layout, and may instead ship with a 16MB layout. Support for these is coming soon.
+*X330 machines are supported but not automatically detected. They are detected as normal X230 machines. The flashing menu has an additional option to flash a BIOS with the LVDS patch for machines detected as an X230.*
+
+# Supporting New Systems and Opening Issues
+Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before asking about compatability or reporting an issue to make sure it is not a duplicate.
 
 # Installing
 
@@ -78,7 +82,7 @@ This project is not permitted to be shared on the ThinkPad subreddit.
 
 This was a monumental amount of work to put together and release, and took a lot of time. 
 
-Special thanks goes to the ThinkPad discord for their efforts testing, especially \x!
+Special thanks goes to the ThinkPad discord for their efforts testing, especially \x for helping create and finalize the BIOS patches, and digmorepaka for helping shrink the Linux image down significantly.
 
 Huge thanks go out to [gch1p](https://github.com/gch1p/thinkpad-bios-software-flashing-guide) for publishing the method used and [pgera](https://github.com/hamishcoleman/thinkpad-ec/issues/70#issuecomment-417903315) for the working commands, without them this would have not been possible.
 
