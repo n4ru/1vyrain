@@ -29,8 +29,8 @@ bios=$(dmidecode -t bios | grep -i version | awk {'print $2'})
 machine=$(dmidecode -t system | grep -i "Family" | awk {'print $3$4'})
 version=$(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g' | sed 's/\.//g')
 valid="false"
-flashsize=$(/root/flashrom/flashrom -p internal:laptop=force_I_want_a_brick --ifd -i bios -N -r /tmp/backup.rom > /dev/null && du -h /tmp/backup.rom | sed "s/[^0-9]//g")
-padding=$(expr $flashsize - 4)
+flashsize=$(/root/flashrom/flashrom -p internal:laptop=force_I_want_a_brick --ifd -i bios -N -r /tmp/backup.rom > /dev/null && du /tmp/backup.rom | sed "s/[^0-9]//g")
+padding=$(expr $flashsize - 4096)
 
 # Check if BIOS version is valid
 case $machine in  
@@ -75,7 +75,7 @@ if [ $(/root/chipsec/chipsec_main.py -m common.bios_wp | sed 's/\n//g' | grep -c
     exit 1
 elif [ $valid == "false" ]; then
     echo -e "\e[1;32mBIOS no longer write-protected! Your machine is compatible but unsupported. Please report the following details as a GitHub issue:"
-    echo -e "Machine: $machine\nBIOS: $bios\nVersion: $(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g')\nFlashsize: $flashsize M\e[0m"
+    echo -e "Machine: $machine\nBIOS: $bios\nVersion: $(dmidecode -t bios | grep -i "Version" | awk {'print $3'} | sed 's/(//g')\nFlashsize: $flashsize \e[0m"
     read -p "Press Enter to exit the script."
     exit 1
 fi
@@ -107,7 +107,7 @@ read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the 
 echo -e "\e[1;32mFlashing BIOS...\e[0m"
 
 # pad the BIOS to 12MB or 16MB before flashing
-dd if=/dev/zero of=/root/bios/pad bs=1M count=$padding
+dd if=/dev/zero of=/root/bios/pad bs=1 count=$padding
 cat /root/bios/pad /root/bios/$machine.rom > /root/bios/rom.temp
 
 /root/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -w /root/bios/rom.temp --ifd -i bios -N
