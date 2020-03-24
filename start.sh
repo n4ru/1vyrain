@@ -44,6 +44,8 @@ case $machine in
         if [ "260" -gt "$version" ]; then valid="true"; fi ;;
     W530)
         if [ "259" -gt "$version" ]; then valid="true"; fi ;;
+    L430)
+        if [ "255" -gt "$version" ]; then valid="true"; fi ;;
 esac
 
 if [ $valid == "false" ]; then
