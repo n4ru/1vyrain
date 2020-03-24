@@ -34,7 +34,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 # BIOS Mod Features:
 - Overclocking support (37xx, 38xx, 39xx CPUs)
 - Whitelist removal to use any WLAN adapter
-- Advanced menu (custom fan curve, TDP, core disable, etc)
+- Advanced menu (custom fan curve, TDP, etc)
 - Intel ME disablement via advanced menu
 
 # Before Installing
