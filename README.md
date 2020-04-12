@@ -12,7 +12,7 @@ d8888                                      Y8P
                   "Y88P"                                
 </pre>
 
-### Revision 4 (MD5: `e414677f9bd93f0a7719b846cc763a00`)
+### Revision 5 (MD5: `change once image is out`)
 
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
@@ -32,10 +32,10 @@ Updates will be published here in the form of scripts that can be downloaded and
 - Support for custom bios images (coreboot, skulls, heads)
 
 # BIOS Mod Features:
-- Overclocking support (37xx, 38xx, 39xx CPUs)
+- Overclocking support (35xx, 37xx, 38xx, 39xx CPUs)
 - Whitelist removal to use any WLAN adapter
 - Advanced menu (custom fan curve, TDP, etc)
-- Intel ME disablement via advanced menu
+- Intel ME "Soft Temporary Disable" via advanced menu
 
 # Before Installing
 **Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatability [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom image, make sure you plug in ethernet prior to boot and that your image is directly accessible via URL.
@@ -56,7 +56,7 @@ Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad
 
 # Installing
 
-1. Burn the 1vyrain image onto a flash drive.
+1. Burn the 1vyrain image onto a flash drive. Validated and recommended tools are: `dd`, `Win32DiskImager`, and `Rufus (note you have to use DD mode)`
 2. Boot in UEFI mode from the flash drive, with Secure Boot off.
 3. Follow the on-screen instructions.
 4. That's it! 
