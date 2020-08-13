@@ -20,9 +20,9 @@ This repo contains the main script and pre-compiled binary files used in the 1vy
 
 The main link to the ready to go live USB image can be found **[here](https://1vyra.in/)**.
 
-Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
+Updates will be published here in the form of scripts that can be downloaded and run on the USB image.
 
-**Although 1vyrain has been very thoroughly tested and there were zero bricks during testing, there are some random quirks associated with bypassing normal flashing methods and things can always go awry randomly. There is no warranty or support guaranteed so please keep this in mind if you intend to use this software. I am not responsible for broken devices. Fortunately, it is impossible to permanently brick a device with this method. Worst case scenario, you can flash a backup or fresh BIOS using a hardware programmer.**
+**Although 1vyrain has been very thoroughly tested and there were zero bricks during testing, there are some random quirks associated with bypassing normal flashing methods and things can always randomly go awry. There is no warranty or support guaranteed so please keep this in mind if you intend to use this software. I am not responsible for broken devices. Fortunately, it is impossible to permanently brick a device with this method. Worst case scenario, you can flash a backup or fresh BIOS using a hardware programmer.**
 
 ## Read the [long form FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before opening an issue.
 
@@ -38,7 +38,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 - Intel ME "Soft Temporary Disable" via advanced menu
 
 # Before Installing
-**Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatability [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom image, make sure you plug in ethernet prior to boot and that your image is directly accessible via URL.
+**Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatibility [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom image, make sure you plug in ethernet prior to boot and that your image is directly accessible via URL.
 
 # Supported Systems
 - X230
@@ -53,7 +53,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 
 # Supporting New Systems and Opening Issues
-Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before asking about compatability or reporting an issue to make sure it is not a duplicate.
+Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before asking about compatibility or reporting an issue to make sure it is not a duplicate.
 
 # Installing
 
@@ -83,9 +83,9 @@ To get a custom splash image follow this procedure:
 
 # License
 
-I retain all rights to the code found in this repo (excluding the BIOS roms and the patcher binary), and no one may reproduce, distribute, or create derivative works from this repo without including this README.me in its entirety!
+I retain all rights to the code found in this repo (excluding the BIOS roms and the patcher binary), and no one may reproduce, distribute, or create derivative works from this repo without including this README.md file in its entirety!
 
-This project is not permitted to be shared on the ThinkPad subreddit.
+You are not permitted to share this project on the ThinkPad subreddit.
 
 ### Join the ThinkPad discord where research happens - https://discord.gg/xVFx9vM
 
