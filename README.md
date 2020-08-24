@@ -12,7 +12,7 @@ d8888                                      Y8P
                   "Y88P"                                
 </pre>
 
-### Revision 4 (MD5: `e414677f9bd93f0a7719b846cc763a00`)
+### Revision 5 (MD5: `dd30313a8665e870360920b00cec55c4`)
 
 Software-based "jailbreak" allowing all ivybridge-based xx30 thinkpads to softmod custom bios images.
 
@@ -20,9 +20,9 @@ This repo contains the main script and pre-compiled binary files used in the 1vy
 
 The main link to the ready to go live USB image can be found **[here](https://1vyra.in/)**.
 
-Updates will be published here in the form of scripts that can be downloaded and ran on the USB image.
+Updates will be published here in the form of scripts that can be downloaded and run on the USB image.
 
-**Although 1vyrain has been very thoroughly tested and there were zero bricks during testing, there are some random quirks associated with bypassing normal flashing methods and things can always go awry randomly. There is no warranty or support guaranteed so please keep this in mind if you intend to use this software. I am not responsible for broken devices. Fortunately, it is impossible to permanently brick a device with this method. Worst case scenario, you can flash a backup or fresh BIOS using a hardware programmer.**
+**Although 1vyrain has been very thoroughly tested and there were zero bricks during testing, there are some random quirks associated with bypassing normal flashing methods and things can always randomly go awry. There is no warranty or support guaranteed so please keep this in mind if you intend to use this software. I am not responsible for broken devices. Fortunately, it is impossible to permanently brick a device with this method. Worst case scenario, you can flash a backup or fresh BIOS using a hardware programmer.**
 
 ## Read the [long form FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before opening an issue.
 
@@ -32,13 +32,13 @@ Updates will be published here in the form of scripts that can be downloaded and
 - Support for custom bios images (coreboot, skulls, heads)
 
 # BIOS Mod Features:
-- Overclocking support (37xx, 38xx, 39xx CPUs)
-- Whitelist removal to use any WLAN adapter
+- Overclocking support (35xx, 37xx, 38xx, 39xx CPUs)
+- Whitelist removal to use any WLAN/WWAN adapter
 - Advanced menu (custom fan curve, TDP, etc)
-- Intel ME disablement via advanced menu
+- Intel ME "Soft Temporary Disable" via advanced menu
 
 # Before Installing
-**Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatability [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom image, make sure you plug in ethernet prior to boot and that your image is directly accessible via URL.
+**Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatibility [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom binary, make sure you plug in ethernet prior to boot and that your binary is directly accessible via URL.
 
 # Supported Systems
 - X230
@@ -51,12 +51,13 @@ Updates will be published here in the form of scripts that can be downloaded and
 
 *X330 machines are supported but not automatically detected. They are detected as normal X230 machines. The flashing menu has an additional option to flash a BIOS with the LVDS patch for machines detected as an X230.*
 
+
 # Supporting New Systems and Opening Issues
-Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before asking about compatability or reporting an issue to make sure it is not a duplicate.
+Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before asking about compatibility or reporting an issue to make sure it is not a duplicate.
 
 # Installing
 
-1. Burn the 1vyrain image onto a flash drive.
+1. Burn the 1vyrain image onto a flash drive. Validated and recommended tools are: `dd`, `Win32DiskImager`, and `Rufus (note you have to use DD mode)`
 2. Boot in UEFI mode from the flash drive, with Secure Boot off.
 3. Follow the on-screen instructions.
 4. That's it! 
@@ -65,16 +66,26 @@ Don't be alarmed if your ThinkPad/ThinkLight power cycles a few times after a fl
 
 **NOTE:** This will NOT modify your EC. You are safe to flash your EC with the battery or keyboard mod at any time as long as you are on a version compatible with the EC mod (check compatibility [here](https://github.com/hamishcoleman/thinkpad-ec#compatibilty-warning)). Both IVprep and 1vyrain will only modify the BIOS region! You can safely use this image to update to the latest modded BIOS without losing your EC mod!
 
-# Custom BIOS Images
-By default, the image includes the latest BIOS versions for all models, but you can flash a custom image such as heads, skulls, or a coreboot build. Make sure you have wired ethernet attached on boot, and that your image is *EXACTLY* 4MB and uploaded somewhere that you can grab with a simple `wget` command. When asked what to flash, select "Flash a custom BIOS from URL" (option 2). Input the URL. That's it!
+# Custom binaries
+By default, the image includes the latest BIOS versions for all models, but you can flash a custom image such as heads, skulls, or a coreboot build. Make sure you have wired ethernet attached on boot, and that your image is *EXACTLY* 4MB and uploaded somewhere that you can grab with a simple `wget` command(http only, https currently not supported.). When asked what to flash, select "Flash a custom BIOS from URL" (option 2). Input the URL. That's it!
 
 Don't worry, if your download screws up or the filesize was wrong, the flashing will simply fail. You won't brick.
 
+# Custom splash image
+To get a custom splash image follow this procedure:
+1. Update with original Lenovo update tool following LOGO.txt instructions
+2. Read back the `bios` region with flashrom or FPTW
+3. Chop off first 8M of the rom `dd if=backup.rom of=4M.rom bs=1M skip=8`
+4. Apply patches from patched-bios repo
+5. Downgrade with IVprep
+6. Write as a custom binary from liveUSB
+
+
 # License
 
-I retain all rights to the code found in this repo (excluding the BIOS roms and the patcher binary), and no one may reproduce, distribute, or create derivative works from this repo without including this README.me in its entirety!
+I retain all rights to the code found in this repo (excluding the BIOS roms and the patcher binary), and no one may reproduce, distribute, or create derivative works from this repo without including this README.md file in its entirety!
 
-This project is not permitted to be shared on the ThinkPad subreddit.
+You are not permitted to share this project on the ThinkPad subreddit.
 
 ### Join the ThinkPad discord where research happens - https://discord.gg/xVFx9vM
 
@@ -96,6 +107,10 @@ Tip me:
 - BTC 3H8kRYoiwS5hNjZddTr5NLYJ77ZwHBpyKp
 - ETH 0xB4683485899A654F9DE413FCfDA6ac39d1eB383E
 - [PayPal.me](https://paypal.me/customthinkpads)
+
+Tip digmorepaka
+- BTC bc1qq795vlcjzutl2nc8cclepz50yhvj07esx6vvwy
+- ETH 0x3883E27f38f0B7Cd450e56c1b8BD5B699174836d
 
 Hire me:
 - [Resume](https://n4ru.it/resume.pdf)

@@ -13,8 +13,7 @@ echo "                      888                               "
 echo "                 Y8b d88P                               "
 echo "                  \`Y88P\`                              "
 echo "Software-based jailbreak for IvyBridge (xx30) series ThinkPads"
-echo "Revision 4"
-
+echo "Revision 5"
 # Give the network time to come online
 if ! ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then echo -e "\e[1;32mWaiting 10 seconds for Network...\e[0m" && sleep 10; fi
 
@@ -32,6 +31,8 @@ valid="false"
 flashsize=$(/root/flashrom/flashrom -p internal:laptop=force_I_want_a_brick --ifd -i bios -N -r /tmp/backup.rom > /dev/null && du /tmp/backup.rom | sed "s/[^0-9]//g")
 padding=$(expr $flashsize - 4096)
 
+echo "You may see an error about flash regions being locked, this is expected and should not be a concern."
+
 # Check if BIOS version is valid
 case $machine in  
     X230Tablet|X230t)
@@ -44,6 +45,9 @@ case $machine in
         if [ "260" -gt "$version" ]; then valid="true"; fi ;;
     W530)
         if [ "259" -gt "$version" ]; then valid="true"; fi ;;
+# Flash unlock works, fw patches don't. Temporarily disabled.
+#    L430)
+#        if [ "255" -gt "$version" ]; then valid="true"; fi ;;
 esac
 
 if [ $valid == "false" ]; then
@@ -81,8 +85,8 @@ elif [ $valid == "false" ]; then
 fi
 
 echo -e "\e[1;32mPlease enter a choice:\e[0m"
-$([[ $machine == "X230" ]]) && echo "0) Flash LVDS Modified Lenovo BIOS for X330"
 $([[ $valid == "true" ]]) && echo "1) Flash Modified Lenovo BIOS"
+$([[ $machine == "X230" ]]) && echo "0) Flash LVDS Modified Lenovo BIOS for X330(X230 FHD/QHD)"
 echo "2) Flash a custom BIOS from URL" 
 echo "3) Shutdown / Abort Procedure"
 read choice
@@ -107,11 +111,12 @@ read -p "Press Enter key to begin flashing your jailbroken BIOS! Do NOT let the 
 echo -e "\e[1;32mFlashing BIOS...\e[0m"
 
 # pad the BIOS to 12MB or 16MB before flashing
-dd if=/dev/zero of=/root/bios/pad bs=1 count=$padding
+dd if=/dev/zero of=/root/bios/pad bs=1K count=$padding
 cat /root/bios/pad /root/bios/$machine.rom > /root/bios/rom.temp
 
 /root/flashrom/flashrom -p internal:laptop=force_I_want_a_brick -w /root/bios/rom.temp --ifd -i bios -N
 
+rm /root/bios/pad
 rm /root/bios/rom.temp
 
 read -p "All done! Press Enter key to restart your ThinkPad or CTRL+C to exit to shell."
