@@ -80,6 +80,21 @@ To get a custom splash image follow this procedure:
 5. Downgrade with IVprep
 6. Write as a custom binary from liveUSB
 
+# Upgrading
+
+To update from an older version of 1vyrain, to a newer version follow the follwing steps. Updates may include security bug fixes.
+
+1. Remove any BIOS passwords, including supervisor passwords
+2. It is suggested to reset BIOS to default settings, and save
+3. Take out any non-whitelisted devices because the FL1's are untouched
+4. Use IVprep to downgrade to a flashable stock BIOS version (very important, do not skip!)
+5. Obtain the latest 1vyrain image compatible with your machine.
+6. Follow the original installation steps above.
+
+**DO NOT SKIP**  the IVprep process at step 4. This is needed to safely reset to a stock BIOS version. This is different from using IVprep during installation to ensure you are using the proper image. Do not skip step 4 above, this is a crucial step.
+
+The steps to upgrade are essentially the same for downgrading, or moving to any version. Ensure you obtain a compatible 1vyrain image for your machine, reset all passwords, reset to default, and use IVprep to downgrade. You would then go through the installation steps to install the desired 1vyrain version.
+
 
 # License
 
