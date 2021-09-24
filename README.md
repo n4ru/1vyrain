@@ -54,7 +54,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 - W530
 
 *X330 machines are supported but not automatically detected. They are detected as normal X230 machines. The flashing menu has an additional option to flash a BIOS with the LVDS patch for machines detected as an X230.*
-
+*-i models of the above are also supported because of a shared firmware and motherboard*
 
 # Supporting New Systems and Opening Issues
 Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad-jailbreak-fd4bb0bdb654) before asking about compatibility or reporting an issue to make sure it is not a duplicate.
