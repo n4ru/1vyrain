@@ -122,16 +122,6 @@ Somehow we had ZERO bricks throughout the entire process! No hardware programmer
 
 Please consider donating or passing my resume along if this helped you.
 
-Tip me: 
-- BTC 3H8kRYoiwS5hNjZddTr5NLYJ77ZwHBpyKp
-- ETH 0xB4683485899A654F9DE413FCfDA6ac39d1eB383E
-- [PayPal.me](https://paypal.me/customthinkpads)
-
-Tip digmorepaka
+Tip digmorepaka (maintainer)
 - BTC bc1qq795vlcjzutl2nc8cclepz50yhvj07esx6vvwy
 - ETH 0x3883E27f38f0B7Cd450e56c1b8BD5B699174836d
-
-Hire me:
-- [Resume](https://n4ru.it/resume.pdf)
-- [Github](https://github.com/n4ru)
-- [Email](mailto:admin@n4ru.it)
