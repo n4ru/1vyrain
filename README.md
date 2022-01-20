@@ -99,6 +99,9 @@ To update from an older version of 1vyrain, to a newer version follow the follwi
 
 The steps to upgrade are essentially the same for downgrading, or moving to any version. Ensure you obtain a compatible 1vyrain image for your machine, reset all passwords, reset to default, and use IVprep to downgrade. You would then go through the installation steps to install the desired 1vyrain version.
 
+# [Buy Stickers](https://thinkmods.store/collections/all-mods-1/products/1vyrain-sticker)
+<img src="https://i.imgur.com/pciprJ8.png" width="250" />
+
 
 # License
 
