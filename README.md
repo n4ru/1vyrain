@@ -117,13 +117,13 @@ You are not permitted to share this project on the ThinkPad subreddit.
 
 This was a monumental amount of work to put together and release, and took a lot of time. 
 
-Special thanks goes to the ThinkPad discord for their efforts testing, especially \x for helping create and finalize the BIOS patches, and digmorepaka for helping shrink the Linux image down significantly.
+Special thanks goes to the ThinkPad discord for their efforts testing, especially \x for helping create and finalize the BIOS patches, and digmorepaka for helping shrink the Linux image down significantly and continuing to maintain the repo.
 
 Huge thanks go out to [gch1p](https://github.com/gch1p/thinkpad-bios-software-flashing-guide) for publishing the method used and [pgera](https://github.com/hamishcoleman/thinkpad-ec/issues/70#issuecomment-417903315) for the working commands, without them this would have not been possible.
 
 Somehow we had ZERO bricks throughout the entire process! No hardware programmers were needed for recovery!
 
-Please consider donating or passing my resume along if this helped you.
+Please consider donating to the current maintainer if this helped you.
 
 Tip digmorepaka (maintainer)
 - BTC bc1qq795vlcjzutl2nc8cclepz50yhvj07esx6vvwy
