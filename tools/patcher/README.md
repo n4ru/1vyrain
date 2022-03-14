@@ -1,3 +1,12 @@
+# OUTDATED
+use https://github.com/digmorepaka/thinkpad-firmware-patches/
+
+
+
+
+
+## old
+
 <pre>
 8888888 888     888 8888888b.          888            888                       
   888   888     888 888   Y88b         888            888                       
