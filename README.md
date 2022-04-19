@@ -109,8 +109,6 @@ I retain all rights to the code found in this repo (excluding the BIOS roms and 
 
 You are not permitted to share this project on the ThinkPad subreddit.
 
-### Join the ThinkPad discord where research happens - https://discord.gg/xVFx9vM
-
 ---
 
 # Credits
