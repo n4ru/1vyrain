@@ -42,7 +42,7 @@ Updates will be published here in the form of scripts that can be downloaded and
 - Intel ME "Soft Temporary Disable" via advanced menu
 
 # Before Installing
-**Please pay careful attention to this section.** . Ensure you're on a compatible BIOS version before beginning (check compatibility [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom binary, make sure you plug in ethernet prior to boot and that your binary is directly accessible via URL.
+**Please pay careful attention to this section.** Ensure you're on a compatible BIOS version before beginning (check compatibility [here](https://github.com/gch1p/thinkpad-bios-software-flashing-guide#bios-versions)). Run [IVprep](https://github.com/n4ru/IVprep) if you are not or are unsure. Clear any BIOS passwords or settings prior to flashing, and do a BIOS setting reset if you can. Ensure your ThinkPad is charged and your adapter is plugged in. If you intend to use a custom binary, make sure you plug in ethernet prior to boot and that your binary is directly accessible via URL.
 
 # Supported Systems
 - X230
