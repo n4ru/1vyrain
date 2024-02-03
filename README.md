@@ -63,11 +63,12 @@ Please read the [longform FAQ](https://medium.com/@n4ru/1vyrain-an-xx30-thinkpad
 # Installing
 
 1. Burn the 1vyrain image onto a flash drive. Validated and recommended tools are: `dd`, `Win32DiskImager`, and `Rufus (note you have to use DD mode)`
-2. Boot in UEFI mode from the flash drive, with Secure Boot off.
+2. Boot in UEFI mode from the flash drive, with Secure Boot off. Only boot the USB via onboard USB ports. USB ports on a docking station, ultrabase, and external USB hubs can cause issues.
 3. Follow the on-screen instructions.
 4. That's it! 
 
 Don't be alarmed if your ThinkPad/ThinkLight power cycles a few times after a flash, or you get a CRC Security error. That is *normal* and will go away after another restart!
+
 
 **NOTE:** This will NOT modify your EC. You are safe to flash your EC with the battery or keyboard mod at any time as long as you are on a version compatible with the EC mod (check compatibility [here](https://github.com/hamishcoleman/thinkpad-ec#compatibilty-warning)). Both IVprep and 1vyrain will only modify the BIOS region! You can safely use this image to update to the latest modded BIOS without losing your EC mod!
 
