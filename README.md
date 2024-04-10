@@ -82,7 +82,7 @@ To get a custom splash image follow this procedure:
 1. Update with original Lenovo update tool following LOGO.txt instructions
 2. Read back the `bios` region with flashrom or FPTW
 3. Chop off first 8M of the rom `dd if=backup.rom of=4M.rom bs=1M skip=8`
-4. Apply patches from patched-bios repo
+4. Apply xx30 patches for your specific model from [firmware-patches](https://github.com/digmorepaka/thinkpad-firmware-patches) repo and fix checksum with [uefi-sign](https://github.com/thrimbor/thinkpad-uefi-sign)
 5. Downgrade with IVprep
 6. Write as a custom binary from liveUSB
 
