@@ -73,7 +73,7 @@ Don't be alarmed if your ThinkPad/ThinkLight power cycles a few times after a fl
 **NOTE:** This will NOT modify your EC. You are safe to flash your EC with the battery or keyboard mod at any time as long as you are on a version compatible with the EC mod (check compatibility [here](https://github.com/hamishcoleman/thinkpad-ec#compatibilty-warning)). Both IVprep and 1vyrain will only modify the BIOS region! You can safely use this image to update to the latest modded BIOS without losing your EC mod!
 
 # Custom binaries
-By default, the image includes the latest BIOS versions for all models, but you can flash a custom image such as heads, skulls, or a coreboot build. Make sure you have wired ethernet attached on boot, and that your image is *EXACTLY* 4MB and uploaded somewhere that you can grab with a simple `wget` command(http only, https currently not supported, you can also use the `--ignore-check-certificates` when running wget manually.). When asked what to flash, select "Flash a custom BIOS from URL" (option 2). Input the URL. That's it!
+By default, the image includes the latest BIOS versions for all models, but you can flash a custom image such as heads, skulls, or a coreboot build. Make sure you have wired ethernet attached on boot, and that your image is *EXACTLY* 4MB and uploaded somewhere that you can grab with a simple `wget` command(http only, https currently not supported, you can also use the `--ignore-check-certificates` flag when running wget manually.). When asked what to flash, select "Flash a custom BIOS from URL" (option 2). Input the URL. That's it!
 
 Don't worry, if your download screws up or the filesize was wrong, the flashing will simply fail. You won't brick.
 
